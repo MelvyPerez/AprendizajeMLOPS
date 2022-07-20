@@ -5,7 +5,7 @@ import pytest
 
 @pytest.mark.number
 def test_add():
-    assert math_functions.add(7,3)==9
+    assert math_functions.add(7,3)==10
     assert math_functions.add(7) ==9
 
 
