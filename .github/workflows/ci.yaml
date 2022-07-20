@@ -8,6 +8,6 @@ jobs:
       - uses: actions/checkout@v2
       - name: ci_run
         run: |
-          pip install -r requirements.txt
+          pip3 install -r requirements.txt
           pytest tests/
           
