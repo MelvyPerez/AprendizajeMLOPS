@@ -1,21 +1,6 @@
 import pytest
+from src.student import StudentDB
 
-from src.student  import StudentDB
-
-
-
-#db=None
-
-#def setup_module(module):
-#    print("iniciando db")
-#    global db
-#    db=StudentDB()
-#    db.connect('data.json')
-
-
-#def teardown_module(module):
-#    print("cerrando db")
-#    db.close()
 
 @pytest.fixture(scope="module")
 def db():
@@ -28,8 +13,6 @@ def db():
 
 
 def test_scott_data(db):
-#    db= StudentDB()
-#    db.connect('data.json')
     scott_data = db.get_data('Scott')
     assert scott_data['id'] == 1
     assert scott_data['name'] == 'Scott'
@@ -37,11 +20,7 @@ def test_scott_data(db):
 
 
 def test_mark_data(db):
-#    db=StudentDB()
-#    db.connect('data.json')
-    mark_data= db.get_data('Mark')
+    mark_data = db.get_data('Mark')
     assert mark_data['id'] == 2
     assert mark_data['name'] == 'Mark'
     assert mark_data['result'] == 'fail'
-
-
